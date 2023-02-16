@@ -1,4 +1,4 @@
-package com.uniovi.notaineitor.entities;
+package com.uniovi.notaneitor.entities;
 
 public class Professor {
     private String dni;

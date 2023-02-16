@@ -1,4 +1,4 @@
-package com.uniovi.notaineitor.controllers;
+package com.uniovi.notaneitor.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

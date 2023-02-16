@@ -1,6 +1,6 @@
-package com.uniovi.notaineitor.services;
+package com.uniovi.notaneitor.services;
 
-import com.uniovi.notaineitor.entities.Professor;
+import com.uniovi.notaneitor.entities.Professor;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
