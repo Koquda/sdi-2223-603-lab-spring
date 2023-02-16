@@ -35,7 +35,11 @@ public class UsersService {
         return usersRepository.findByDni(dni);
     }
 
-        public void deleteUser(Long id) {
+    public void deleteUser(Long id) {
         usersRepository.deleteById(id);
+    }
+
+    public User findByDni(String dni) {
+        return usersRepository.findByDni(dni);
     }
 }
