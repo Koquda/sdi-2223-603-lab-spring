@@ -48,4 +48,11 @@ public class MarksController {
         marksService.addMark(mark);
         return "redirect:/mark/details/"+id;
     }
+
+    // Devolver un fragmento en lugar de la vista completa
+    @RequestMapping("/mark/list/update")
+    public String updateList(Model model) {
+        model.addAttribute("markList", marksService.getMarks());
+        return "mark/list::tableMarks";
+    }
 }
