@@ -71,10 +71,17 @@
   <h2>Notas</h2>
   <p>Las notas que actualmente figuran en el sistema son las siguientes:</p>
   <button type="button" id="updateButton" class="btn btn-primary">Actualizar</button>
-  <script>
-    $("#updateButton").click(function () {
-      $("#tableMarks").load('/mark/list/update');
+  <script th:inline="javascript">
+    /*<![CDATA[*/
+    $( "#updateButton" ).click(function() {
+      let numberPage = [[${param.page}]];
+      let urlUpdate = '/mark/list/update';
+      if (numberPage != null ){
+        urlUpdate += "?page="+numberPage[0];
+      }
+      $("#tableMarks").load(urlUpdate);
     });
+    /*]]>*/
   </script>
   <form class="form-inline" action="/mark/list">
     <div class="form-group">
@@ -111,7 +118,13 @@
                 /*<![CDATA[*/
                 $( "#resendButton"+ "[[${mark.id}]]").click(function() {
                   $.get( "/mark/[[${mark.id}]]/noresend", function( data ) {
-                    $("#tableMarks").load('/mark/list/update');
+                    let numberPage = [[${param.page}]];
+                    let urlUpdate = '/mark/list/update';
+                    if ( numberPage != null ){
+                      urlUpdate += "?page="+numberPage[0];
+                    }
+                    $("#tableMarks").load(urlUpdate);
+
                   });
                 });
                 /*]]>*/
@@ -125,7 +138,12 @@
                 /*<![CDATA[*/
                 $( "#noresendButton"+ "[[${mark.id}]]" ).click(function() {
                   $.get( "/mark/[[${mark.id}]]/resend", function( data ) {
-                    $("#tableMarks").load('/mark/list/update');
+                    var numberPage = [[${param.page}]];
+                    var urlUpdate = '/mark/list/update';
+                    if ( numberPage != null ){
+                      urlUpdate += "?page="+numberPage[0];
+                    }
+                    $("#tableMarks").load(urlUpdate);
                   });
                 });
                 /*]]>*/
@@ -140,7 +158,9 @@
     </table>
     <div th:if="${#lists.isEmpty(markList)}"> No marks </div>
   </div>
+  <footer th:replace="fragments/pagination"/>
 </div>
+<footer th:replace="fragments/footer"/>
 
 
 </body>
