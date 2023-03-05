@@ -77,6 +77,15 @@
             <artifactId>thymeleaf-extras-springsecurity4</artifactId>
             <version>3.0.4.RELEASE</version>
         </dependency>
+        <!-- TESTING -->
+        <!-- TODO: revisar esto porque es lo que daba error en el guión -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <scope>system</scope>
+            <version>3.141.59</version>
+            <systemPath>${basedir}/src/lib/selenium-server-standalone-3.141.59.jar</systemPath>
+        </dependency>
     </dependencies>
 
 </project>
