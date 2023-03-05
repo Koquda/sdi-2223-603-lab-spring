@@ -1,5 +1,6 @@
 package com.uniovi.notaneitor;
 
+import com.uniovi.notaneitor.util.SeleniumUtils;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
