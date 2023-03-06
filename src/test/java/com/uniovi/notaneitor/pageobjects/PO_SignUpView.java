@@ -27,7 +27,7 @@ public class PO_SignUpView extends PO_NavView {
         passwordConfirm.click();
         passwordConfirm.clear();
         passwordConfirm.sendKeys(passwordconfp);
-//Pulsar el boton de Alta.
+        //Pulsar el boton de Alta.
         By boton = By.className("btn");
         driver.findElement(boton).click();
     }
